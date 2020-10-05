@@ -3,10 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\User;
-class HomeController{
+class HomeController extends BaseController{
     public function index(){
-        echo "<pre>";
-        var_dump(User::all());
+        $name = "thienth";
+        $age = 30;
+        $company = "FPT Polytechnic";
+        $this->render('home.index', [
+            'name' => $name,
+            'age' => $age,
+            'yourCompany' => $company
+        ]);
     }
 
     public function detail()
